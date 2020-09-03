@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Transacao
 from .form import TransacaoForm
 
@@ -16,13 +16,13 @@ def visualizar(request):
 
 def cadastrar(request): #cadastrar
     data ={}
- #   form = TransacaoForm(request.POST or None) # se tiver algum form e errado ele volta, senao ele salva
+    form = TransacaoForm(request.POST or None) # se tiver algum form e errado ele volta, senao ele salva
 
-  #  if form.is_valid():
-   #     form.save()
-    #    return cadastrar(request)
-    #data['form'] =form
-    return render(request,"sites/cadastrar.html")
+    if form.is_valid():
+       form.save()
+       return redirect('url_visualizar')
+    data['form'] =form
+    return render(request,"sites/cadastrar.html",data)
 
 def alterar(request):
     return render(request,"sites/alterar.html")

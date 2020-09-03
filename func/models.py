@@ -13,9 +13,9 @@ class Transacao(models.Model):
     email = models.CharField(max_length=20)
     nome = models.CharField(max_length=20)
     sobrenome = models.CharField(max_length=20)
-    investimentos = models.ForeignKey(Categoria, on_delete=models.CASCADE,blank=True)
+    investimentos = models.ForeignKey(Categoria, on_delete=models.CASCADE,null=True,blank=True)
     #observacoes = models.TextField(null=True,blank=True)
-    imagem = models.ImageField(default='func/images/default.png',upload_to='images',null=True, blank=True)
+    imagem = models.ImageField(default='images/default.png',upload_to='images',null=True, blank=True)
 
 
     def __str__(self):
