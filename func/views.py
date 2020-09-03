@@ -8,6 +8,7 @@ def paginaInicial(request):
     data['transacoes'] = ['t1','t2','t3']
     return render(request, "sites/index.html",data)
 
+
 def visualizar(request):
     data = {}
     data['transacoes'] = Transacao.objects.all()

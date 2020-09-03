@@ -8,7 +8,6 @@
 
     <link href="{% static 'func/css/bootstrap.min.css'%}" rel="stylesheet">
     <link href="{% static 'func/css/estilo.css'%}" rel="stylesheet">
-    <script src="{% static 'func/js/script.js' %}"></script>
     <script src="{% static 'func/js/jquery.js' %}"></script>
     <script src="{% static 'func/js/bootstrap.bundle.min.js'%}"></script>
 
@@ -52,12 +51,14 @@
                 <h1 class=" font-weight-bold ">TESTE </h1>
             </div>
         </div>
-        {%for transacao in transacoes %} {{transacao.image}} {%endfor%} {%for transacao in transacoes %}
+        {%for transacao in transacoes %} {{transacao.image.url}} {%endfor%} {%for transacao in transacoes %}
         <!-- item 1 -->
         <div class="col-lg-4 col-12">
             <div class="card bg-transparent">
                 <a data-toggle="modal" data-target="#modal-default{{transacao.id}}">
-                    <img src="{{transacao.image}}" class="rounded-circle img-fluid max-width:33%" style="padding: 5%;">
+                    <img src="{% if transacao.imagem %}
+                    {{transacao.imagem.url}} 
+                 {% endif %}" class="rounded-circle img-fluid max-width:33%" style="padding: 5%;">
                 </a>
                 <!-- modal -->
                 <div id="modal-default{{transacao.id}}" class="modal fade">
@@ -76,11 +77,13 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
-                                        <img src="{%static 'func/images/tech1.jpg' %}" class="rounded img-fluid img-lg">
+                                        <img src="{% if transacao.imagem %}
+                                        {{transacao.imagem.url}} 
+                                     {% endif %}" class="rounded img-fluid img-lg">
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <p class="text-justify font-weight-bold modaltext">
-                                            {{transacao.nome}} {{transacao.email}} {{transacao.investimento}}
+                                            Nome: {{transacao.nome}} {{transacao.sobrenome}} <br> Email: {{transacao.email}} <br> Investimento: {{transacao.investimentos}}
                                         </p>
                                     </div>
                                 </div>

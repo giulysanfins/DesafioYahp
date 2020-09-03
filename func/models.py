@@ -15,8 +15,10 @@ class Transacao(models.Model):
     sobrenome = models.CharField(max_length=20)
     investimentos = models.ForeignKey(Categoria, on_delete=models.CASCADE,blank=True)
     #observacoes = models.TextField(null=True,blank=True)
-    image = models.ImageField(upload_to='profile_image', blank=True)
+    imagem = models.ImageField(default='func/images/default.png',upload_to='images',null=True, blank=True)
 
 
     def __str__(self):
-        return self.email + self.nome
+        return self.email
+
+        
