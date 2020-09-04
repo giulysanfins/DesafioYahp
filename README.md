@@ -2,8 +2,6 @@
 
 # XasTree Financial Services
 
-## Cópia do jogo PacMan feito em linguagem Assembly x8086
-
 ### Descrição do Projeto
    * Trata-se de um desafio de estágio proposto pela empresa [Yahp](https://www.linkedin.com/company/yahp/) em 4 dias.
 #### Proposta:
