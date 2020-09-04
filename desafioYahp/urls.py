@@ -22,7 +22,9 @@ from django.views.static import serve
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-      url(r'',include("func.urls")), #adicionei uma pasta url no meu app func para n precisar chamar aqui
+    path("admin/", admin.site.urls),
+    url(
+        r"", include("func.urls")
+    ),  # adicionei uma pasta url no meu app func para n precisar chamar aqui
 ]
-urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

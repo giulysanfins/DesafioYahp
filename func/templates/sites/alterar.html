@@ -47,13 +47,31 @@
         <div class="row">
             <div class="col-lg-12 col-12 text-light bg-transparent">
                 <h1 class="nossos font-weight-bold ">Visualização </h1>
-                <h1 class=" font-weight-bold ">bla </h1>
+                <h1 class=" font-weight-bold ">Aqui você pode editar e deletar funcionários </h1>
             </div>
         </div>
-        <div class="row d-flex align-items-strch">
-            <h1>sadasd</h1>
+    </div>
+
+    <div class="container-fluid bg" style="padding-bottom:5em;">
+        <div class="row justify-content-center">
+            <div class=" col-lg-6 col-12 col-block border rounded" style="background-color: beige;">
+                <p class="text-center text-dark font-weight-bold">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!--cuidado XSS -->{{form.as_p}}
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-5 col-12">
+                                <button type="submit" action class="btn btn-success btn-block font-weight-bold">BUSCAR / EDITAR / EXCLUIR</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </p>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>

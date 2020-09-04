@@ -7,13 +7,19 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('func', '0015_auto_20200903_2013'),
+        ("func", "0015_auto_20200903_2013"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='transacao',
-            name='investimentos',
-            field=models.ForeignKey(blank=True, default='Sem Investimento', null=True, on_delete=django.db.models.deletion.CASCADE, to='func.categoria'),
+            model_name="transacao",
+            name="investimentos",
+            field=models.ForeignKey(
+                blank=True,
+                default="Sem Investimento",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="func.categoria",
+            ),
         ),
     ]

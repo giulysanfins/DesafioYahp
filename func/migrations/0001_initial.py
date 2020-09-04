@@ -8,27 +8,49 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Categoria',
+            name="Categoria",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=100)),
-                ('dt_criacao', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nome", models.CharField(max_length=100)),
+                ("dt_criacao", models.DateTimeField(auto_now_add=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Transacao',
+            name="Transacao",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('data', models.DateTimeField(auto_now=True)),
-                ('email', models.CharField(max_length=20)),
-                ('nome', models.CharField(max_length=20)),
-                ('sobrenome', models.CharField(max_length=20)),
-                ('investimentos', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='func.categoria')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("data", models.DateTimeField(auto_now=True)),
+                ("email", models.CharField(max_length=20)),
+                ("nome", models.CharField(max_length=20)),
+                ("sobrenome", models.CharField(max_length=20)),
+                (
+                    "investimentos",
+                    models.ForeignKey(
+                        blank=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="func.categoria",
+                    ),
+                ),
             ],
         ),
     ]
