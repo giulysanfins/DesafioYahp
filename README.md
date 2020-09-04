@@ -34,6 +34,7 @@
 * Se realizar "Download ZIP", necessita de um descompactador de arquivos.
 * Após ter instalado o Python e Django, os seguintes passos devem ser feitos:  
  1-)Mudar para a pasta com os arquivos descompactados.
+ 
 ![diretorio](https://user-images.githubusercontent.com/32877842/92271002-70633180-eebd-11ea-8f32-acb9e4982599.png)
 
  2-)Usar o comando ```python manage.py runserver``` para executar o servidor.
